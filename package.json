@@ -2,7 +2,7 @@
 	"name": "post-block-plugin",
 	"version": "0.1.0",
 	"description": "Example block scaffolded with Create Block tool.",
-	"author": "The WordPress Contributors",
+	"author": "Tuba Saif",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
