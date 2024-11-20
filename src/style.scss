@@ -1,12 +1,13 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.popular-posts-block {
+    font-family: Arial, sans-serif;
+    color: #333;
 
-.wp-block-create-block-post-block-plugin {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+    a {
+        text-decoration: none;
+        color: #0073aa;
+
+        &:hover {
+            color: #005177;
+        }
+    }
 }

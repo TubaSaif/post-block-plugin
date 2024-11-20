@@ -1,1 +1,1 @@
-console.log("Hello World! (from create-block-post-block-plugin block)");
+console.log("Hello World! (My load more functionality now)"),document.addEventListener("DOMContentLoaded",(function(){const e=document.getElementById("load-more-button");e&&e.addEventListener("click",(function(){alert("Button clicked! This is your alert message.")}))}));

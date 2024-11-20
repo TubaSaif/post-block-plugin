@@ -1,41 +1,26 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
 import { __ } from '@wordpress/i18n';
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, RangeControl } from '@wordpress/components';
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
+const Edit = ( { attributes, setAttributes } ) => {
+    const { postCount } = attributes;
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-import './editor.scss';
+    return (
+        <div { ...useBlockProps() }>
+            <InspectorControls>
+                <PanelBody title={ __( 'Settings', 'popular-post-block' ) }>
+                    <RangeControl
+                        label={ __( 'Number of Posts', 'popular-post-block' ) }
+                        value={ postCount }
+                        onChange={ ( value ) => setAttributes( { postCount: value } ) }
+                        min={ 1 }
+                        max={ 10 }
+                    />
+                </PanelBody>
+            </InspectorControls>
+            <p>{ __( 'Popular Posts will be displayed here.', 'popular-post-block' ) }</p>
+        </div>
+    );
+};
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {Element} Element to render.
- */
-export default function Edit() {
-	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Post Block Plugin – hello from the editor!',
-				'post-block-plugin'
-			) }
-		</p>
-	);
-}
+export default Edit;

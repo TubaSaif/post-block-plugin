@@ -1,9 +1,8 @@
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.popular-posts-block {
+    font-family: Arial, sans-serif;
+    color: #333;
 
-.wp-block-create-block-post-block-plugin {
-	border: 1px dotted #f00;
+    li {
+        margin-bottom: 5px;
+    }
 }
